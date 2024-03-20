@@ -1,8 +1,11 @@
+p = []
+i = []
 while True:    
     numero = int(input("Digite um número: "))
     if numero % 2 == 0:
-        P = numero
-        print ("Seu número é par")
+        p.append(numero)
+    
     else:
-        i = numero 
-        print("Seu número é ímpar")
+        i.append(numero)
+    print(f"Os números pares são: {p}")
+    print(f"Os números impares são: {i}")
