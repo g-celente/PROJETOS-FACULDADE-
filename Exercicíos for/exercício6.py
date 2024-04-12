@@ -3,7 +3,14 @@ p = []
 j = []
 
 for i in range (0,10):
-    numero = int(input(f"Digite o {i+1}° numero: "))
+    while True:
+        numero = int(input(f"Digite o {i+1}° numero: "))
+
+        if numero < 0:
+            print("Número inválido, tente novamente.....")
+            continue
+        else:
+            break
 
     if numero < 0: 
         print("Número inválido, tente novamente...")
