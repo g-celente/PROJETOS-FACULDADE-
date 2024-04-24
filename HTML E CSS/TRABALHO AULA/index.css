@@ -5,7 +5,7 @@ body{
 
 header {
     background-color: white;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 10;
 }
@@ -28,17 +28,24 @@ nav li {
 }
 
 h1 {
-    text-align: center;
-}
-
-p {
     text-align: justify;
-    margin-inline-start: 300px;
-    margin-inline-end: 300px;
+    margin-left: 12%;
+    font-size: 25px;
+    font-family: sans-serif;
 }
 
-.paragrafo image {
-    position: center;
+div p {
+    text-align: justify;
+    margin-inline-start: 100px;
+    margin-inline-end: 100px;
+    font-size: 18px;
+    font-family:'Raleway', sans-serif;
+}
+
+img{
+    width: 400px;
+    height: 200px;
+    
 }
 .container {
     background-image: url(images/imagem\ curitiba.jpg);
@@ -51,7 +58,27 @@ p {
     bottom: 50px;
 }
 
+.container2 {
+    text-align: center;
+    background-color:#ededed;
+    margin-left: 10%;
+    margin-right: 35%;
+    border-radius: 10%;
+}
+
 .titulo1 {
     font-size: 30px;
     color: black;
+}
+
+.footer{
+    background-color: #050033;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer nav li{
+    color: white;
 }
