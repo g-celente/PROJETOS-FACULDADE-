@@ -31,15 +31,15 @@ h1 {
     text-align: center;
 }
 
-img {
-    align-items: center;
- }
 p {
-    text-align: center;
+    text-align: justify;
     margin-inline-start: 300px;
     margin-inline-end: 300px;
 }
 
+.paragrafo image {
+    position: center;
+}
 .container {
     background-image: url(images/imagem\ curitiba.jpg);
     background-size: cover;
