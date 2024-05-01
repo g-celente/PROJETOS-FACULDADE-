@@ -10,7 +10,7 @@ header {
     z-index: 10;
 }
 
-nav {
+.headline nav {
     margin: 0;
     padding: 10px;
     position: relative;
@@ -61,8 +61,8 @@ img{
 .container2 {
     text-align: center;
     background-color:#ededed;
-    margin-left: 10%;
-    margin-right: 35%;
+    margin-left: 15%;
+    margin-right: 10%;
     border-radius: 10%;
 }
 
@@ -82,3 +82,24 @@ img{
 footer nav li{
     color: white;
 }   
+
+.content {
+    display: flex;
+}
+
+
+.content nav {
+    background-color:#ededed ;
+    padding: 10px;
+}
+
+.content nav li {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    width: 100px;
+    padding: 20px;
+    
+}
