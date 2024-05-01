@@ -1,0 +1,44 @@
+body {
+    margin : 0;
+    padding: 0;
+}
+
+.cabecalho header {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.cabecalho nav {
+    margin: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.cabecalho nav li {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+}
+
+.background {
+    background-image: url(academia.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    bottom: 50px;
+}
+
+.background button{
+    background-color: black;
+    text-align: center;
+    border-radius: 10%;
+}
