@@ -42,3 +42,16 @@ body {
     text-align: center;
     border-radius: 10%;
 }
+
+.geral h2{
+    text-align: center;
+}
+.geral p{
+    text-align: center;
+    color: black;
+    margin-inline-start: 300px;
+    margin-inline-end: 300px;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+
+}
