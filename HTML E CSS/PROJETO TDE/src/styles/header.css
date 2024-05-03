@@ -1,6 +1,10 @@
 header {
     width: 100%;
-    padding: 28px 8%; 
+    padding: 28px 8%;
+    position: sticky;
+    top: 0; 
+    background-color: #fff9ea;
+    z-index: 3;
 }
 
 #navbar {
@@ -30,4 +34,11 @@ header {
 
 section {
     padding: 28px 8%;
+}
+
+@media screen and (max-width: 1170px) {
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
 }
