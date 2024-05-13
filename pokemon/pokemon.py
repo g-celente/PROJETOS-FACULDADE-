@@ -1,6 +1,6 @@
 import random 
 import time as t
-import pandas as pd
+import sys
 
 pokemons_floresta = ["Treecko", "Torterra", "Venusaur", "Bayleef", "Ivysaur", "Sceptile","Flygon","Eevee","Garchomp","Greninja"]
 pokemons_caverna = ["Meowscarada", "Chein-Pao", "Panda", "Gengar", "HeraCross", "Blaziken","Luxray","Tyranitar","Gardevoir","Lucario"]
@@ -134,3 +134,5 @@ while True:
     else:
         print("Opção incorreta, tente novamente...")
         continue
+    sys.stdout.write("\033[H\033[J")
+    sys.stdout.flush()
