@@ -24,7 +24,7 @@ while True:
     elif choice == 4:
         mt.mt_intro()
     elif choice == 5:
-        choice2 = int(input("Deseja realmente sair? (s/n)")).lower()
+        choice2 = input("Deseja realmente sair? (s/n)\n> ").lower()
         if choice2 == "s":
             print("Obrigado por utilizar...")
             break
