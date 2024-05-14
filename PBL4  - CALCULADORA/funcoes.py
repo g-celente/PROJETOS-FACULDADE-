@@ -1,10 +1,42 @@
 import sys
 
-a = 0 
-b = 0
+def valores ():
+    done = False
+    while not done:
 
-def raiz (A,B):
-    pass
+        a = float(input("Digite o Valor de A:\n> "))
+
+        if a == 0:
+            print("O coeficiente a não pode ser igual a 0, tente novamente...")
+            continue
+
+        b = float(input("Digite o Valor de B:\n> "))
+        c = float(input("Digite o Valor de C:\n> "))
+        done = True    
+
+    return a,b,c
+def raiz (A,B, C):
+    
+    delta = B**2 - 4*A*C
+
+    if delta > 0:
+        raiz1 = (-B + delta**0.5)/(2*A)
+        raiz2 = (-B - delta**0.5)/(2*A)
+
+        print(f"As Raízes são Reais e diferentes:\nRaiz 1 = {raiz1}\nRaiz 2 = {raiz2}")
+
+    elif delta == 0:
+        raiz1 = -B/(2*A)
+        raiz2 = raiz1
+        print(f"As Raízes são iguais:\nRaiz 1 = {raiz1}\nRaiz 2 = {raiz2}")
+
+    else:
+        real = -B / (2*A)
+        imaginario = (-delta)**0.5 / (2*A)
+        raiz1 = complex(real, imaginario)
+        raiz2 = complex(real, -imaginario)
+
+        print(f"As Raízes são complexas:\nRaiz 1 = {raiz1}\nRaiz 2 = {raiz2}")
 
 def funcao (A,B):
     pass
@@ -16,6 +48,9 @@ def grafico(A,B):
     pass
 
 def def_intro ():
+    print("Antes de tudo, informe os valores de A, B e C: ")
+    a,b,c = valores()
+
     while True:
         print("Escola uma das opções: ")
         print(" 1 - Calcular raízes")
@@ -28,13 +63,13 @@ def def_intro ():
         choice = int(input("> "))
 
         if choice == 1:
-            raiz(a,b)
+            raiz(a,b,c)
         elif choice == 2:
-            funcao(a,b)
+            funcao(a,b,c)
         elif choice == 3:
-            vertice(a,b)
+            vertice(a,b,c)
         elif choice == 4:
-            grafico(a,b)
+            grafico(a,b,c)
         elif choice == 5:
             print("Voltando ao menu principal")
             break
