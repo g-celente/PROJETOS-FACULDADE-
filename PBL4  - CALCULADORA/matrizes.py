@@ -13,7 +13,8 @@ def trasposta(A,B):
 
 def mt_intro ():
     while True:
-        print("Escola uma das opções: ")
+        print(20*'-', "Matrizes", 20*"-")
+        print("Escolha uma das opções: ")
         print(" 1 - Verificar se é matriz quadrada")
         print(" 2 - Multiplicação")
         print(" 3 - Matriz transposta ")

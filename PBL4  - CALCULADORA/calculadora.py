@@ -4,8 +4,7 @@ import funcoes as fc
 import matrizes as mt
 
 while True:
-    print(100*'-')
-    print("CALCULADORA")
+    print(20*'-', "CALCULADORA", 20*'-')
     print("Escolha uma das Opções abaixo: ")
     print(" 1 - Conjuntos Numéricos")
     print(" 2 - Função do segundo Grau")

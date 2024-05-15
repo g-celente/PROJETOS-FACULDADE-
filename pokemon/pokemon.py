@@ -92,7 +92,7 @@ def recaptura(listaPokemons, pokedex,pokemon_encontrado):
     while True:
 
         if chances == 0:
-            print("Suas chances extras acabaram!")
+            print("Você não conseguiu Capturar, suas chances extras acabaram!")
             break
         recaptura2 = input(f"Você não conseguiu capturá-lo. Deseja tentar novamente? (s/n) restam {chances} extras: ")
 
