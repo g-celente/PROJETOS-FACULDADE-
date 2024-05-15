@@ -12,7 +12,14 @@ while True:
     print(" 4 - Matrizes")
     print(" 5 - Sair")
 
-    choice = int(input("> "))
+    while True:
+        try:
+            choice = int(input("> "))
+        except:
+            print("Operação inválida, tente um número inteiro")
+            continue
+        else:
+            break
 
     if choice == 1:
         cj.set_intro()

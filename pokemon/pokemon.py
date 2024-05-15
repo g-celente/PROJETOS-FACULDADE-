@@ -130,17 +130,23 @@ while True:
     print(" 2 - Entrar na Floresta")
     print(" 3 - Ver sua Pokedex")
     print(" 4 - Sair do jogo")
-
-    choice = int(input("> "))    
-    if choice == 1:
-        pegar_pokemon(pokemons_caverna,pokedex)
-    elif choice == 2:
-        pegar_pokemon(pokemons_floresta,pokedex)
-    elif choice == 3:
-        ver_pokedex(pokedex)
-    elif choice == 4:
-        print("Obrigado por jogar!")
-        break
-    else:
-        print("Opção incorreta, tente novamente...")
+    
+    
+    try:
+        choice = int(input("> "))
+    except:
+        print("Operação inválida, tente novamente...")   
         continue
+    else:
+        if choice == 1:
+            pegar_pokemon(pokemons_caverna,pokedex)
+        elif choice == 2:
+            pegar_pokemon(pokemons_floresta,pokedex)
+        elif choice == 3:
+            ver_pokedex(pokedex)
+        elif choice == 4:
+            print("Obrigado por jogar!")
+            break
+        else:
+            print("Opção incorreta, tente novamente...")
+            continue
