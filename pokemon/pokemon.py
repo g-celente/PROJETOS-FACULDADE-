@@ -6,13 +6,21 @@ pokemons_caverna = ["Meowscarada", "Chein-Pao", "Panda", "Gengar", "HeraCross", 
 pokedex = []
 chances = 3
 
-def captura ():
+def captura (ListaPokemons):
     nm = random.randint(0,100)
 
-    if nm >=50:
-        validacao = 1
+    if ListaPokemons == pokemons_floresta:
+
+        if nm >= 50:
+            validacao = 1
+        else:
+            validacao =  2
     else:
-        validacao =  2
+        if nm <=35:
+            validacao = 1
+        else:
+            validacao = 2
+
     return validacao
 
 def introdução ():
@@ -35,73 +43,76 @@ def pokemon_inicial(pokedex):
 
         if choice == 1:
             pokedex.append("Squirtle")
+            print("Parabéns, seu pokemon inicial é o: Squirtle!")
             break
         elif choice == 2:
             pokedex.append("Charmander")
+            print("Parabéns, seu pokemon inicial é o: Charmander!")
             break
         elif choice == 3:
             pokedex.append("Bulbasaur")
+            print("Parabéns, seu pokemon inicial é o: Bulbasaur!")
             break
         else:
             print("Opção inválida, tente novamente...")
             continue
-
-    print("PARABÉNS, SEU POKEMON INICIAL É: ")
-    ver_pokedex(pokedex)
-    t.sleep(3)
+    t.sleep(2)
     
-def pegar_pokemon(listaPokemons,chances):
-        
-        pokemon_encontrado = random.choice(listaPokemons)
+def pegar_pokemon(listaPokemons, pokedex):
+    global chances
+   
+    pokemon_encontrado = random.choice(listaPokemons)
 
-        if pokemon_encontrado in pokedex:
-            print(f"Você entrou na floresta e encontrou {pokemon_encontrado} e já tem em sua pokedex, saindo")
+    if pokemon_encontrado in pokedex:
+        print(f"Você entrou na floresta e encontrou {pokemon_encontrado} e já tem em sua pokedex, saindo")
         
-        else:
-            pokebola_extra = random.randint(0,2)
+    else:
+        pokebola_extra = random.randint(0,2)
             
-            if pokebola_extra == 0:
-                print(f"Que pena, você não conseguiu nenhuma pokebola extra! ")
-            elif pokebola_extra == 1:
-                print(f"Parabéns, você conseguiu {pokebola_extra} pokebolas extras")
-                chances += pokebola_extra
-            else:
-                print(f"Parabéns, você conseguiu {pokebola_extra} pokebolas extras")
-                chances += pokebola_extra
+        if pokebola_extra == 0:
+            print(f"Que pena, você não conseguiu nenhuma pokebola extra! ")
+        else:
+            print(f"Parabéns, você conseguiu {pokebola_extra} pokebolas extras")
+            chances += pokebola_extra
 
-            captura2 = input(f"Você encontrou o {pokemon_encontrado},deseja capturá-lo? (s/n) \n: ").lower()
+        captura2 = input(f"Você encontrou o {pokemon_encontrado},deseja capturá-lo? (s/n) \n: ").lower()
                 
-            if captura2 == "s":
+        if captura2 == "s":
                 
-                if captura() == 1:
-                    print(f"Você capturou o {pokemon_encontrado}!")
-                    pokedex.append(pokemon_encontrado)
+            if captura(listaPokemons) == 1:
+                print(f"Você capturou o {pokemon_encontrado}!")
+                pokedex.append(pokemon_encontrado)
                     
-                else:      
-                    while True:
+            else:
+                recaptura(listaPokemons,pokedex,pokemon_encontrado)     
+    
 
-                        if chances == 0:
-                            print("Suas chances extras acabaram!")
-                            break
+def recaptura(listaPokemons, pokedex,pokemon_encontrado):
+    global chances
+    while True:
 
-                        recaptura2 = input(f"Você não conseguiu capturá-lo. Deseja tentar novamente? (s/n) restam {chances} extras: ")
+        if chances == 0:
+            print("Suas chances extras acabaram!")
+            break
+        recaptura2 = input(f"Você não conseguiu capturá-lo. Deseja tentar novamente? (s/n) restam {chances} extras: ")
 
-                        if recaptura2 == "s":
-                            chances = chances - 1
-                            
-                            if captura() == 1:
-                                print(f"Você capturou o {pokemon_encontrado}")
-                                pokedex.append(pokemon_encontrado)
-                                break
-                            else:
-                                continue
+        if recaptura2 == "s":
+            chances -= 1
 
-                        elif recaptura2 == "n":
-                            break
-                        else:
-                            print("Opção inválida, pokemon escapou!")
-                            break
-        
+            if captura(listaPokemons) == 1:
+                print(f"Você capturou o {pokemon_encontrado}")
+                pokedex.append(pokemon_encontrado)
+                break
+            else:
+                continue
+
+        elif recaptura2 == "n":
+            break
+        else:
+            print("Opção inválida, pokemon escapou!")
+            break
+    
+            
 
 def ver_pokedex(pokedex):
     print(f"Os Pokemons na sua pokedex são:")
@@ -122,9 +133,9 @@ while True:
 
     choice = int(input("> "))    
     if choice == 1:
-        pegar_pokemon(pokemons_caverna,chances)
+        pegar_pokemon(pokemons_caverna,pokedex)
     elif choice == 2:
-        pegar_pokemon(pokemons_floresta,chances)
+        pegar_pokemon(pokemons_floresta,pokedex)
     elif choice == 3:
         ver_pokedex(pokedex)
     elif choice == 4:

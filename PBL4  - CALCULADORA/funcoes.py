@@ -38,14 +38,55 @@ def raiz (A,B, C):
 
         print(f"As Raízes são complexas:\nRaiz 1 = {raiz1}\nRaiz 2 = {raiz2}")
 
-def funcao (A,B):
-    pass
+def funcao (A,B,C):
+    x = float(input("Digite o valor de x:\n> "))
+    fx = A*x**2 + B*x + C
+    print(f"A função é:\nf({x}) = {fx}")
 
-def vertice(A,B):
-    pass
 
-def grafico(A,B):
-    pass
+def vertice(A,B,C):
+    xv = -B / (2*A)
+    yv = A*xv**2 + B*xv + C
+
+    if A>0:
+        tipo = "mínimo"
+    else:
+        tipo = "máximo"
+
+    print(f"O vértice da função é ({xv}, {yv}) e é um ponto de {tipo}")
+
+def grafico(A,B,C):
+    largura = 60
+    altura = 20
+    escala_x = 0.5
+    escala_y = 1.0
+    
+    # Gerar pontos da função quadrática
+    pontos = []
+    for i in range(largura):
+        x = (i - largura // 2) * escala_x
+        y = A * x**2 + B * x + C
+        pontos.append((x, y))
+
+    # Encontrar valores máximos e mínimos para escalar o gráfico
+    min_y = min(p[1] for p in pontos)
+    max_y = max(p[1] for p in pontos)
+
+    # Desenhar o gráfico
+    for j in range(altura, -1, -1):
+        linha = ""
+        for i in range(largura):
+            x, y = pontos[i]
+            scaled_y = (y - min_y) / (max_y - min_y) * altura
+            if abs(scaled_y - j) < 0.5:
+                linha += "*"
+            elif j == altura // 2:
+                linha += "-"
+            elif i == largura // 2:
+                linha += "|"
+            else:
+                linha += " "
+        print(linha)
 
 def def_intro ():
     print("Antes de tudo, informe os valores de A, B e C: ")
