@@ -39,7 +39,7 @@ def set_intro ():
         print(" 2 - Realizar União dos Conjuntos")
         print(" 3 - Calcular intersenção ")
         print(" 4 - Calcular diferença")
-        print(" 5 -  Voltar ao menu principal")
+        print(" 5 - Voltar ao menu principal")
         print(" 6 - Fechar calculadora")
 
         choice = int(input("> "))

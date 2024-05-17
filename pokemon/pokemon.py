@@ -39,23 +39,26 @@ def pokemon_inicial(pokedex):
         print(" 2 - Charmander")
         print(" 3 - Bulbasaur ")
         
-        choice = int(input("> "))
-
-        if choice == 1:
-            pokedex.append("Squirtle")
-            print("Parabéns, seu pokemon inicial é o: Squirtle!")
-            break
-        elif choice == 2:
-            pokedex.append("Charmander")
-            print("Parabéns, seu pokemon inicial é o: Charmander!")
-            break
-        elif choice == 3:
-            pokedex.append("Bulbasaur")
-            print("Parabéns, seu pokemon inicial é o: Bulbasaur!")
-            break
+        try:
+            choice = int(input("> "))
+        except:
+            print("Operação inválida, tente novament...")    
         else:
-            print("Opção inválida, tente novamente...")
-            continue
+            if choice == 1:
+                pokedex.append("Squirtle")
+                print("Parabéns, seu pokemon inicial é o: Squirtle!")
+                break
+            elif choice == 2:
+                pokedex.append("Charmander")
+                print("Parabéns, seu pokemon inicial é o: Charmander!")
+                break
+            elif choice == 3:
+                pokedex.append("Bulbasaur")
+                print("Parabéns, seu pokemon inicial é o: Bulbasaur!")
+                break
+            else:
+                print("Opção inválida, tente novamente...")
+                continue
     t.sleep(2)
     
 def pegar_pokemon(listaPokemons, pokedex):
