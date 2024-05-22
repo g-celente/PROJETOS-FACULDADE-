@@ -1,4 +1,6 @@
 import sys
+import numpy as np
+import matplotlib.pyplot as plt
 
 def valores ():
     done = False
@@ -56,7 +58,7 @@ def vertice(A,B,C):
     print(f"O vértice da função é ({xv}, {yv}) e é um ponto de {tipo}")
 
 def grafico(A,B,C):
-   pass
+    pass
 
 def def_intro ():
     print("Antes de tudo, informe os valores de A, B e C: ")
@@ -69,7 +71,7 @@ def def_intro ():
         print(" 2 - Calcular função em x pedido")
         print(" 3 - Calcular Vértice ")
         print(" 4 - Gerar gráfico")
-        print(" 5 -  Voltar ao menu principal")
+        print(" 5 - Voltar ao menu principal")
         print(" 6 - Fechar calculadora")
 
         choice = int(input("> "))
