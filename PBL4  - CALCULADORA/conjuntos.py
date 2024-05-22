@@ -1,9 +1,40 @@
 import sys
 import time as t
 
-conjA = {1,2,3,4,5,6,7}
-conjB = {3,4,5,6}
+conjA = []
+conjB = []
 
+sets=lambda a,b: (set(a),set(b))
+
+def conjunts (ListaA, ListaB):
+    while True:
+        try:
+            numA = int(input("Digite os valores do conjunto A e 0 para parar: "))
+        except:
+            print("Inválido, tente novamente...")
+        
+        if numA != 0: 
+            ListaA.append(numA)
+            
+        else:
+            print(f"O conjunto A é igual a: {ListaA}")
+            print(80*'-')
+            break
+    
+    while True:
+        try:
+            numB = int(input("Digite os valores do conjunto B e 0 para parar: "))
+        except:
+            print("Inválido, tente novamente...")
+        
+        if numB != 0:
+            ListaB.append(numB)
+            
+        else:
+            print(f"O conjunto B é igual a: {ListaB}")
+            print(80*'-')
+            break
+            
 
 def subconjunto(A,B):
     if A <= B:
@@ -14,7 +45,7 @@ def subconjunto(A,B):
     t.sleep(2)
 
 def uniao(A,B):
-    uniao = A | B
+    uniao = A|B
 
     print(f"A união dos conjuntos A e B é {uniao}")
     t.sleep(2)
@@ -30,8 +61,12 @@ def diferenca(A,B):
     
     print(f"A diferença dos Conjuntos A e B é: {diferenca}")
     t.sleep(2)
-    
+
 def set_intro ():
+    global conjA, conjB
+    conjunts(conjA, conjB)
+    conjA, conjB = sets(conjA,conjB)
+
     while True:
         print(20*'-', "Conjuntos Numéricos", 20*"-")
         print("Escolha uma das opções: ")
