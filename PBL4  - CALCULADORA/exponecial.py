@@ -1,4 +1,6 @@
 import sys  
+import matplotlib.pyplot as plt
+import numpy as np
 
 a = 0
 b = 0
@@ -29,25 +31,42 @@ def calcular(A,B):
     f_x =  A * (B ** x)
 
     print(f"f({x}) = {f_x}")
-    
+    return f_x
  
 
 def grafico(A,B):
-    pass
+    x = float(input("Digite o valor de x: "))
+    eixoX = np.arange(-10,11,1)
+    eixoY = []
 
+    for x in eixoX:
+        fx = A * (B**x)
+        eixoY.append(fx)
+    plt.plot(eixoX,eixoY)
+    plt.xlabel("Eixo X")
+    plt.ylabel("Eixo Y")
+    plt.title("Gráfico de função 2° Grau")
+    plt.grid(True)
+    plt.axhline(y=0, color='r')
+    plt.axvline(x=0, color='b')
+    plt.show()
+    
 def exponential_intro ():
-    a, b = numeros()
-
+    a,b = 0, 0 
     while True:
         print(20*'-', "Funções Exponenciais", 20*"-")
         print("Escolha uma das opções: ")
         print(" 1 - Verificar se é crescente ou decrescente")
         print(" 2 - Calcular função em x pedido")
         print(" 3 - Gerar gráfico")
-        print(" 4 -  Voltar ao menu principal")
-        print(" 5 - Fechar calculadora")
-
-        choice = int(input("> "))
+        print(" 4 - Pedir Valores")
+        print(" 5 - Voltar ao menu principal")
+        print(" 6 - Fechar calculadora")
+        try:
+            choice = int(input("> "))
+        except:
+            print("Opção inválida, tente novamente...")
+            continue
 
         if choice == 1:
             verificar(a,b)
@@ -56,9 +75,11 @@ def exponential_intro ():
         elif choice == 3:
             grafico(a,b)
         elif choice == 4:
+            a,b = numeros()
+        elif choice == 5:
             print("Voltando ao menu principal")
             break
-        elif choice == 5:
+        elif choice == 6:
             print("Obrigado por utilizar a calculadora")
             sys.exit()
         else:

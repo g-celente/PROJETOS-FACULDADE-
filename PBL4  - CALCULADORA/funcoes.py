@@ -44,6 +44,7 @@ def funcao (A,B,C):
     x = float(input("Digite o valor de x:\n> "))
     fx = A*x**2 + B*x + C
     print(f"A função gerada é:\nf({x}) = {fx}")
+    
 
 
 def vertice(A,B,C):
@@ -58,12 +59,25 @@ def vertice(A,B,C):
     print(f"O vértice da função é ({xv}, {yv}) e é um ponto de {tipo}")
 
 def grafico(A,B,C):
-    pass
+    x = float(input("Digite o valor de x:\n> "))
+    eixoX = np.arange(-10,11,1)
+    eixoY = []
 
+    for x in eixoX:
+        fx = A*x**2 + B*x + C
+        eixoY.append(fx)
+    
+    plt.plot(eixoX,eixoY)
+    plt.xlabel("Eixo X")
+    plt.ylabel("Eixo Y")
+    plt.title("Gráfico de função 2° Grau")
+    plt.grid(True)
+    plt.axhline(y=0, color='r')
+    plt.axvline(x=0, color='b')
+    plt.show()
+    
 def def_intro ():
-    print("Antes de tudo, informe os valores de A, B e C: ")
-    a,b,c = valores()
-
+    
     while True:
         print(20*'-', "Funções Segundo Grau", 20*"-")
         print("Escolha uma das opções: ")
@@ -71,10 +85,14 @@ def def_intro ():
         print(" 2 - Calcular função em x pedido")
         print(" 3 - Calcular Vértice ")
         print(" 4 - Gerar gráfico")
-        print(" 5 - Voltar ao menu principal")
-        print(" 6 - Fechar calculadora")
-
-        choice = int(input("> "))
+        print(" 5 - Pedir Valores")
+        print(" 6 - Voltar ao menu principal")
+        print(" 7 - Fechar calculadora")
+        try:
+            choice = int(input("> "))
+        except:
+            print("Opção inválida, tente novamente...")
+            continue
 
         if choice == 1:
             raiz(a,b,c)
@@ -85,9 +103,11 @@ def def_intro ():
         elif choice == 4:
             grafico(a,b,c)
         elif choice == 5:
+            a,b,c = valores()
+        elif choice == 6:
             print("Voltando ao menu principal")
             break
-        elif choice == 6:
+        elif choice == 7:
             print("Obrigado por utilizar a calculadora")
             sys.exit()
         else:

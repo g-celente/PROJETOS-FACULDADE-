@@ -44,23 +44,12 @@ def subconjunto(A,B):
         print("A não é um subconjunto de B")
     t.sleep(2)
 
-def uniao(A,B):
-    uniao = A|B
+uniao = lambda A,B: A|B
 
-    print(f"A união dos conjuntos A e B é {uniao}")
-    t.sleep(2)
-    
-def intersencao(A,B):
-    intersencao = A & B
+intersencao= lambda A,B: A & B 
 
-    print(f"A interseção dos Conjuntos A e B é: {intersencao}")
-    t.sleep(2)
+diferenca= lambda A,B: A-B
 
-def diferenca(A,B):
-    diferenca = A-B
-    
-    print(f"A diferença dos Conjuntos A e B é: {diferenca}")
-    t.sleep(2)
 
 def set_intro ():
     global conjA, conjB
@@ -76,17 +65,23 @@ def set_intro ():
         print(" 4 - Calcular diferença")
         print(" 5 - Voltar ao menu principal")
         print(" 6 - Fechar calculadora")
-
-        choice = int(input("> "))
+        try:    
+            choice = int(input("> "))
+        except:
+            print("Opção errada, tente novamente...")
+            continue
 
         if choice == 1:
             subconjunto(conjA,conjB)
         elif choice == 2:
-            uniao(conjA,conjB)
+            print(f"A união dos conjuntos A e B é:\n> = {uniao(conjA,conjB)}")
+            t.sleep(2)
         elif choice == 3:
-            intersencao(conjA,conjB)
+            print(f"A intersenção dos conjuntos A e B é: \n> = {intersencao(conjA,conjB)}")
+            t.sleep(2)
         elif choice == 4:
-            diferenca(conjA,conjB)
+            print(f"A diferença dos conjuntos A e B é:\n> = {diferenca(conjA,conjB)}")
+            t.sleep(2)       
         elif choice == 5:
             print("Voltando ao menu principal")
             break
@@ -96,3 +91,4 @@ def set_intro ():
         else:
             print("Opção inválida, tente novamente...")
             continue
+
