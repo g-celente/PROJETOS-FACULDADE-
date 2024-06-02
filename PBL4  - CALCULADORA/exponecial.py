@@ -2,9 +2,6 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
-a = 0
-b = 0
-
 def numeros ():
     done = False
 

@@ -12,7 +12,8 @@ def conjunts (ListaA, ListaB):
             numA = int(input("Digite os valores do conjunto A e 0 para parar: "))
         except:
             print("Inválido, tente novamente...")
-        
+            continue
+
         if numA != 0: 
             ListaA.append(numA)
             
@@ -26,6 +27,7 @@ def conjunts (ListaA, ListaB):
             numB = int(input("Digite os valores do conjunto B e 0 para parar: "))
         except:
             print("Inválido, tente novamente...")
+            continue
         
         if numB != 0:
             ListaB.append(numB)
