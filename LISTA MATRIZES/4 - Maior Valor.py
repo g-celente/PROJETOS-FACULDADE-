@@ -10,7 +10,7 @@ def criar_matriz(lines, coluns):
 
 def maior_valor_linha(matriz, linha):
     
-    if linha < 0 or linha >= len(matriz):
+    if linha < 0 or linha > len(matriz):
         print("Matriz inválida...")
     else:
         return max(matriz[linha])

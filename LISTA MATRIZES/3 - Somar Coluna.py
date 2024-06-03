@@ -11,10 +11,11 @@ def criar_matriz(lines, coluns):
 
 def soma_coluna(matriz, coluna):
 
-    if coluna < 0 or coluna >= len(matriz[0]):
+    if coluna < 0 or coluna > len(matriz[0]):
         print("Coluna Inválida")
 
     soma = 0
+    
     for linha in matriz:
         soma += linha[coluna]
     return soma
