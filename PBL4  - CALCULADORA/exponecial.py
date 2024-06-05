@@ -17,6 +17,9 @@ def numeros ():
     return A, B
     
 def verificar(A,B):
+    if A == 0 and B == 0:
+        print("Por favor, primeiro insira os valores na opção 5")
+
     if B > 1:
         print("A função é crescente.")
     elif 0 < B < 1:
@@ -64,21 +67,25 @@ def exponential_intro ():
         except:
             print("Opção inválida, tente novamente...")
             continue
-
-        if choice == 1:
-            verificar(a,b)
-        elif choice == 2:
-            calcular(a,b)
-        elif choice == 3:
-            grafico(a,b)
-        elif choice == 4:
-            a,b = numeros()
-        elif choice == 5:
-            print("Voltando ao menu principal")
-            break
-        elif choice == 6:
-            print("Obrigado por utilizar a calculadora")
-            sys.exit()
-        else:
-            print("Opção inválida, tente novamente...")
+        
+        try:
+            if choice == 1:
+                verificar(a,b)
+            elif choice == 2:
+                calcular(a,b)
+            elif choice == 3:
+                grafico(a,b)
+            elif choice == 4:
+                a,b = numeros()
+            elif choice == 5:
+                print("Voltando ao menu principal")
+                break
+            elif choice == 6:
+                print("Obrigado por utilizar a calculadora")
+                sys.exit()
+            else:
+                print("Opção inválida, tente novamente...")
+                continue
+        except:
+            print("Por favor, primeiro informe os números na opção 4")
             continue

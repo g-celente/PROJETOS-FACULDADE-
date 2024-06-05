@@ -18,6 +18,9 @@ def valores ():
 
     return a,b,c
 def raiz (A,B, C):
+
+    if A == 0 and B == 0 and C == 0:
+        print("Por favor, primeiro insira os valores na opção 5")
     
     delta = B**2 - 4*A*C
 
@@ -93,23 +96,26 @@ def def_intro ():
         except:
             print("Opção inválida, tente novamente...")
             continue
-
-        if choice == 1:
-            raiz(a,b,c)
-        elif choice == 2:
-            funcao(a,b,c)
-        elif choice == 3:
-            vertice(a,b,c)
-        elif choice == 4:
-            grafico(a,b,c)
-        elif choice == 5:
-            a,b,c = valores()
-        elif choice == 6:
-            print("Voltando ao menu principal")
-            break
-        elif choice == 7:
-            print("Obrigado por utilizar a calculadora")
-            sys.exit()
-        else:
-            print("Opção inválida, tente novamente")
-            continue
+        
+        try:
+            if choice == 1:
+                raiz(a,b,c)
+            elif choice == 2:
+                funcao(a,b,c)
+            elif choice == 3:
+                vertice(a,b,c)
+            elif choice == 4:
+                grafico(a,b,c)
+            elif choice == 5:
+                a,b,c = valores()
+            elif choice == 6:
+                print("Voltando ao menu principal")
+                break
+            elif choice == 7:
+                print("Obrigado por utilizar a calculadora")
+                sys.exit()
+            else:
+                print("Opção inválida, tente novamente")
+                continue
+        except:
+            print("Por favor, primeiro insira os valores na opção 5")

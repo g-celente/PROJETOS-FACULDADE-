@@ -72,7 +72,8 @@ def set_intro ():
         except:
             print("Opção errada, tente novamente...")
             continue
-
+        
+        
         if choice == 1:
             subconjunto(conjA,conjB)
         elif choice == 2:
